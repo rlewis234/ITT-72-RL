@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
-        <title>Title</title>
+        <title>Homework Tracking</title>
     </head>
 
     <main>
@@ -29,21 +29,27 @@
             </form>
         </section>
 
-        <select id="filterClass">
-            <option value="all">All Classes</option>
-        </select>
+        <section id="filters">
 
-        <select id="filterCategory">
-            <option value="all">All Categories</option>
-        </select>
+            <select id="filterClass">
+                <option value="all">All Classes</option>
+            </select>
 
-        <select id="filterStatus">
-            <option value="all">All Tasks</option>
-            <option value="completed">Completed</option>
-            <option value="incomplete">Incomplete</option>
-        </select>
+            <select id="filterCategory">
+                <option value="all">All Categories</option>
+            </select>
 
-        <ul id="tasks"></ul>
+            <select id="filterStatus">
+                <option value="all">All Tasks</option>
+                <option value="completed">Completed</option>
+                <option value="incomplete">Incomplete</option>
+            </select>
+
+        </section>
+
+        <section id="tasks">
+            <ul id="tasks"></ul>
+        </section>
 
     </main>
 
