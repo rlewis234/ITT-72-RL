@@ -1,0 +1,52 @@
+<html lang="en">
+
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Title</title>
+    </head>
+
+    <main>
+        <header>
+            <h1>Homework Dashboard</h1>
+            <button id="toggle-theme">Dark Mode</button>
+        </header>
+
+        <section id="stats">
+            <p>Total Tasks: <span id="total_task">0</span></p>
+            <p>Completed Tasks: <span id="completed_tasks">0</span></p>
+        </section>
+
+        <section id="form_area">
+            <form>
+                <input type="text" id="task_title" placeholder="New Task">
+                <input type="text" id="className" placeholder="Class">
+                <input type="text" id="category" placeholder="Category">
+                <input type="date" id="duedate">
+                <button id="submittask">Submit</button>
+                <div id="formErrors">
+            </form>
+        </section>
+
+        <select id="filterClass">
+            <option value="all">All Classes</option>
+        </select>
+
+        <select id="filterCategory">
+            <option value="all">All Categories</option>
+        </select>
+
+        <select id="filterStatus">
+            <option value="all">All Tasks</option>
+            <option value="completed">Completed</option>
+            <option value="incomplete">Incomplete</option>
+        </select>
+
+        <ul id="tasks"></ul>
+
+    </main>
+
+    <script src="dashboard.js"></script>
+
+</html>
