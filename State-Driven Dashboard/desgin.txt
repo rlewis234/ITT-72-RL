@@ -1,0 +1,83 @@
+-- Greeting profesor, I don't know if you'll actually read this but if you are this is a document I'll be makeing for all assigments in this class.
+I'll be using them to to explain my thinking and contain some outlines I use to get an idea on what I be making and/or needing to complete the assigments.
+If your ever curious about the decision I made in an assigment you will probably find some insight here.
+This doc does not in any way interact or effect the project, I'm just using it to get my ideas down to help my thought process.
+
+
+--sample data outline
+
+const dashboardState = {
+  tasks: [],
+  notes: [], /didn't end up useing\
+  selectedCategory: "all",
+  theme: "light"
+};
+
+const task = {
+  id: idnum
+  completed: yes/no
+  taskname: taskname
+  category: taskcategory
+  class: class
+  duedate: duedate
+}
+
+--sample webpage outline
+
+header
+
+stats (how many active? how many complete? how many total task? etc)
+
+form for new task
+
+category filter / status filter
+
+task list
+
+
+-- Code explaination
+Conceptually this is a rather simple assigment, create a dashboard that displays useful information to the user in one place and allow interaction.
+I ended up making a homework/ Studen assigment tracker.
+The file allows for a student to enter the Name of the assigment, Class it's for, the category it's in (math/science/etc), and the date it is due.
+
+As for the 10 requirements I'll go through them one by one
+
+1.Clear dashboard theme - The user should understand what your dashboard is for.
+  keeping track of homework and assigments due
+2. Central state object or array - Your app data should be stored in JavaScript using arrays, objects, or both.
+  I use the dashboardState
+3. At least 3 dashboard sections - Examples: task list, stats area, notes section, progress tracker, filter section, goal tracker, recent activity, or theme controls.
+  I have stats, form_area, filters, and task all as sections
+4. At least 3 major interactive features - Examples: add item, delete item, mark complete, edit item, filter items, sort items, update progress, add note, or reset data.
+  Users can add task/assigments, delete them, mark them as complete, and filter them by class, category, or current status
+5. Dynamic rendering from state - The page should update when your JavaScript data changes.
+  any time changes to data are made the render function is called
+6. User input handling - Your app should respond to forms, buttons, dropdowns, checkboxes, or other user actions.
+  The user enters assigment information into a form and that data is used to create a task card, user can also use dropdowns to filter visible assigments
+7. Validation or app rules - Prevent at least one invalid action, such as blank submissions, duplicate entries, invalid numbers, or missing selections.
+  User are prevented from entering in empty data
+8. Organized functions - Your JavaScript should be split into meaningful functions instead of one large block of code.
+  several functions are used to prevent one large code block, the drawDashboard function could probably be split, but all the code within the function
+  relates to the dashboard and what should be rendered
+9. Polished CSS styling - Your app should look intentional, readable, and easy to use.
+  Admittedly css remains an annoyance, I know how to style with css but making something pleasant to look at remains a goliath task.
+  Due to being busy at work and life in general I spent the least amount of time on this project on the css.
+  a lot of the styling was following a guide, but I like how it turned out (I was even able to use the ever classic white/blue color scheme I relied on in webscripting 1)
+10. GitHub Pages deployment - Your project must work on your live GitHub Pages site and be linked from your main site or navigation.
+  this is done
+
+while localStorage is allowed, I did not make use of it for this project.
+
+-- If I hand more time what would I add/change
+
+-Use of localStorage to make the app fully usable
+
+- sorting based on duedate
+
+- smoothing out the filter function right now it's alitle crude
+
+- searching for specifc assigments
+
+- making added assigment more detailed
+
+- allowing editing of assigments
