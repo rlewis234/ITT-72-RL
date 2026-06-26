@@ -1,2 +1,0 @@
-export const welcomeMessage = "Welcome to my Web Scripting 2 starter app!";
-export const aboutMe = "My name is Ryan Lewis. I first starting coding in 4-H. I have used python, html, css, and js. I have experince devoping games using Unity. My favorite color is purple.";
