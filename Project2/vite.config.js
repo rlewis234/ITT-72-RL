@@ -5,4 +5,8 @@ export default defineConfig(({ command }) => ({
     command === "build"
       ? "/ITT-72-RL/Project2/"
       : "/",
+
+  build: {
+    outDir: "dist"
+  }
 }));
