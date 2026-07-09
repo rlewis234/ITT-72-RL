@@ -4,17 +4,17 @@ function EnemyForm() {
     <div id="enemyForm">
         <form >
             <h2>Add Enemy</h2>
-            <input type="radio" name="enemyType" value="Goblin"/>
-            <label htmlFor="enemyType">Goblin</label>
+            <input type="radio" id="enemyTypeG" name="enemyType" value="Goblin"/>
+            <label htmlFor="enemyTypeG">Goblin</label>
 
-            <input type="radio" name="enemyType" value="Zombie"/>
-            <label htmlFor="enemyType">Zombie</label>
+            <input type="radio" id="enemyTypeZ" name="enemyType" value="Zombie"/>
+            <label htmlFor="enemyTypeZ">Zombie</label>
 
-            <input type="radio" name="enemyType" value="Skeleton"/>
-            <label htmlFor="enemyType">Skeleton</label>
+            <input type="radio" id="enemyTypeS" name="enemyType" value="Skeleton"/>
+            <label htmlFor="enemyTypeS">Skeleton</label>
 
             <label htmlFor="enemylevel">Enemy Level:</label>
-            <input type="number" name="enemylevel"/>
+            <input type="number" id="enemylevel" name="enemylevel"/>
 
             <button>Create Enemy</button>
         </form>

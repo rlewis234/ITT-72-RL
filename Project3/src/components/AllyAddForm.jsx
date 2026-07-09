@@ -4,20 +4,20 @@ function AllyForm() {
     <div id="allyForm">
         <form >
             <h2>Add Ally</h2>
-            <input type="radio" name="allytype" value="Paladin"/>
-            <label htmlFor="allyType">Paladin</label>
+            <input type="radio" id="allyTypeP" name="allyType" value="Paladin"/>
+            <label htmlFor="allyTypeP">Paladin</label>
 
-            <input type="radio" name="allyType" value="Knight"/>
-            <label htmlFor="allyType">Knight</label>
+            <input type="radio" id="allyTypeK" name="allyType" value="Knight"/>
+            <label htmlFor="allyTypeK">Knight</label>
 
-            <input type="radio" name="allyType" value="Ranger"/>
-            <label htmlFor="allyType">Ranger</label>
+            <input type="radio" id="allyTypeR" name="allyType" value="Ranger"/>
+            <label htmlFor="allyTypeR">Ranger</label>
 
-            <input type="radio" name="allyType" value="Wizard"/>
-            <label htmlFor="allyType">Wizard</label>
+            <input type="radio" id="allyTypeW" name="allyType" value="Wizard"/>
+            <label htmlFor="allyTypeW">Wizard</label>
 
             <label htmlFor="allylevel">Ally Level:</label>
-            <input type="number" name="allylevel"/>
+            <input type="number" id="allylevel" name="allylevel"/>
 
             <button>Create Ally</button>
         </form>
