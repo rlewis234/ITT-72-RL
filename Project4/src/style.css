@@ -1,0 +1,469 @@
+/* ==========================
+   RESET
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==========================
+   BASE
+========================== */
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+#root {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* ==========================
+   THEMES
+========================== */
+
+.dark {
+    min-height: 100vh;
+    background: #1f2430;
+    color: #f5f5f5;
+    padding: 30px;
+}
+
+.light {
+    min-height: 100vh;
+    background: #f5f5f5;
+    color: #222;
+    padding: 30px;
+}
+
+
+/* ==========================
+   HEADER
+========================== */
+
+header {
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #ffd166;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #c7d0dd;
+    margin-bottom: 20px;
+}
+
+.light header h1 {
+    color: #b77900;
+}
+
+.light header p {
+    color: #555;
+}
+
+
+/* ==========================
+   BUTTONS
+========================== */
+
+button {
+    background: #4c6ef5;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .2s;
+}
+
+button:hover {
+    background: #3b5bdb;
+    transform: translateY(-2px);
+}
+
+
+/* ==========================
+   MAIN LAYOUT
+========================== */
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: start;
+}
+
+main > :first-child,
+main > :last-child {
+    grid-column: 1 / -1;
+}
+
+
+/* ==========================
+   SORT CONTROLS
+========================== */
+
+#enemySort,
+#allySort {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-right: 8px;
+    font-weight: 600;
+}
+
+select {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: .95rem;
+}
+
+.light select {
+    background: white;
+    color: #222;
+}
+
+/* ==========================
+   CARD LISTS
+========================== */
+
+#enemyCardList,
+#allyCardList {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    gap: 20px;
+    padding: 0;
+    justify-content: start;
+}
+
+
+/* ==========================
+   CARDS
+========================== */
+
+.enemycard,
+.allycard {
+    width: 250px;
+    min-height: 180px;
+    border-radius: 14px;
+    padding: 22px;
+    min-height: 180px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.35);
+    display: flex;
+    flex-direction: column;
+    transition: .2s ease;
+}
+
+.dark .enemycard,
+.dark .allycard {
+    background: #2d3142;
+}
+
+.light .enemycard,
+.light .allycard {
+    background: white;
+    color: #222;
+}
+
+.enemycard:hover,
+.allycard:hover {
+    transform: translateY(-5px);
+}
+
+
+/* ==========================
+   ENEMY CARD
+========================== */
+
+.enemycard {
+    border-left: 6px solid #ff6b6b;
+}
+
+.enemycard h2 {
+    color: #ff8787;
+    margin-bottom: 14px;
+}
+
+.light .enemycard h2 {
+    color: #c92a2a;
+}
+
+.enemycard.low-health {
+    border-left: 6px solid #ff6b6b;
+    animation: enemyLowHealthPulse 1.5s ease-in-out infinite;
+}
+
+.dark .enemycard.low-health {
+    background: linear-gradient(135deg, #2d3142 0%, #5a2525 100%);
+}
+
+.light .enemycard.low-health {
+    background: linear-gradient(135deg, #ffffff 0%, #ffe3e3 100%);
+}
+
+.enemycard.low-health h2 {
+    color: #ff6b6b;
+}
+
+@keyframes enemyLowHealthPulse {
+    0% {
+        box-shadow: 0 0 8px rgba(255, 107, 107, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 24px rgba(255, 107, 107, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 8px rgba(255, 107, 107, 0.3);
+    }
+}
+
+
+/* ==========================
+   ALLY CARD
+========================== */
+
+.allycard {
+    border-left: 6px solid #51cf66;
+}
+
+.allycard h2 {
+    color: #69db7c;
+    margin-bottom: 14px;
+}
+
+.light .allycard h2 {
+    color: #2b8a3e;
+}
+
+.allycard.level-ready {
+    border-left: 6px solid #ffd43b;
+    animation: levelReadyGlow 2s ease-in-out infinite;
+}
+
+.dark .allycard.level-ready {
+    background: linear-gradient(135deg, #2d3142 0%, #4f4420 100%);
+}
+
+.light .allycard.level-ready {
+    background: linear-gradient(135deg, #ffffff 0%, #fff3bf 100%);
+}
+
+.allycard.level-ready h2 {
+    color: #ffd43b;
+}
+
+@keyframes levelReadyGlow {
+    0% {
+        box-shadow: 0 0 8px rgba(255, 212, 59, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 24px rgba(255, 212, 59, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 8px rgba(255, 212, 59, 0.3);
+    }
+}
+
+.allycard.low-health {
+    border-left: 6px solid #ff6b6b;
+    animation: lowHealthPulse 1.5s ease-in-out infinite;
+}
+
+.dark .allycard.low-health {
+    background: linear-gradient(135deg, #2d3142 0%, #5a2525 100%);
+}
+
+.light .allycard.low-health {
+    background: linear-gradient(135deg, #ffffff 0%, #ffe3e3 100%);
+}
+
+.allycard.low-health h2 {
+    color: #ff6b6b;
+}
+
+@keyframes lowHealthPulse {
+    0% {
+        box-shadow: 0 0 8px rgba(255, 107, 107, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 24px rgba(255, 107, 107, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 8px rgba(255, 107, 107, 0.3);
+    }
+}
+
+/* ==========================
+   CARD TEXT
+========================== */
+
+.enemycard p,
+.allycard p {
+    margin: 6px 0;
+    color: #dce3ed;
+}
+
+.light .enemycard p,
+.light .allycard p {
+    color: #333;
+}
+
+
+/* ==========================
+   FORMS
+========================== */
+
+#enemyForm,
+#allyForm {
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.35);
+    margin-top: 20px;
+}
+
+.dark #enemyForm,
+.dark #allyForm {
+    background: #2d3142;
+}
+
+.light #enemyForm,
+.light #allyForm {
+    background: white;
+    color: #222;
+}
+
+#enemyForm {
+    border-left: 6px solid #ff6b6b;
+}
+
+#allyForm {
+    border-left: 6px solid #51cf66;
+}
+
+#enemyForm form,
+#allyForm form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+#enemyForm label,
+#allyForm label {
+    color: #dce3ed;
+}
+
+.light #enemyForm label,
+.light #allyForm label {
+    color: #333;
+}
+
+input[type="number"],
+input[type="text"] {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+.dark input[type="number"],
+.dark input[type="text"] {
+    background: #3b4055;
+    color: white;
+}
+
+.light input[type="number"],
+.light input[type="text"] {
+    background: #eee;
+    color: #222;
+}
+
+
+/* ==========================
+   STATS
+========================== */
+
+#statsCard {
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+.dark #statsCard {
+    background: #343a40;
+}
+
+.light #statsCard {
+    background: white;
+    color: #222;
+}
+
+#statsCard h2 {
+    color: #ffd166;
+}
+
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.dark footer {
+    color: #9fa8b3;
+}
+
+.light footer {
+    color: #666;
+}
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 900px) {
+
+    body {
+        padding: 20px;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    main > :first-child,
+    main > :last-child {
+        grid-column: auto;
+    }
+
+    #enemyCardList,
+    #allyCardList {
+        grid-template-columns: 1fr;
+    }
+
+    .enemycard,
+    .allycard {
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+}
