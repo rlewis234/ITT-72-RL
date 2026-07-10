@@ -57,8 +57,8 @@ function EnemyForm({ setEnemies, setStats }) {
               ))}
             </select>
 
-            <label htmlFor="enylvl">Enemy Level:</label>
-            <input type="number" name="enemylevel" id="enylvl" value={level} onChange={(e) => setLevel(Number(e.target.value))}/>
+            <label htmlFor="enylvl">Level:</label>
+            <input type="number" name="enemylevel" id="enylvl" min={1} value={level} onChange={(e) => setLevel(Number(e.target.value))}/>
 
             <button type="submit">Create Enemy</button>
         </form>

@@ -61,8 +61,8 @@ function AllyForm({ setAllies, setStats }) {
               ))}
             </select>
 
-            <label htmlFor="allylvl">Ally Level:</label>
-            <input type="number" name="allylevel" id="allylvl" value={level} onChange={(e) => setLevel(Number(e.target.value))}/>
+            <label htmlFor="allylvl">Level:</label>
+            <input type="number" name="allylevel" id="allylvl" min={1} value={level} onChange={(e) => setLevel(Number(e.target.value))}/>
 
             <button type="submit">Create Ally</button>
         </form>
