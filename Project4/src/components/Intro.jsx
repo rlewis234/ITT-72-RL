@@ -1,7 +1,7 @@
 function Intro() {
   return (
     <div>
-      <p>A card based game prototype.</p>
+      <p>A card based React dashboard.</p>
     </div>
   );
 }
