@@ -27,6 +27,10 @@ function App() {
       return "Props allow data to be passed from one component to another.";
     }
 
+    if (text.includes("usestate")) {
+      return "useState is a Hook that lets you add state to functional components.";
+    }
+
     if (text.includes("state")) {
       return "State stores data that can change over time.";
     }
@@ -51,11 +55,7 @@ function App() {
       return "React Hooks let you use state and other React features inside functional components.";
     }
 
-    if (text.includes("useState")) {
-      return "useState is a Hook that lets you add state to functional components.";
-    }
-
-    if (text.includes("useeffect") || text.includes("useEffect")) {
+    if (text.includes("useeffect")) {
       return "useEffect lets you perform side effects like fetching data or updating the document title.";
     }
 
