@@ -3,10 +3,11 @@ import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import ShowList from "./components/ShowList";
 import ShowSortBy from "./components/ShowSortBy";
+import Footer from "./components/Footer";
 
 export default function App() {
   const [shows, setShows] = useState([]);
-  const [search, setSearch] = useState("Bones"); // defualt search to how fectch loading data
+  const [search, setSearch] = useState("Bones"); // defualt search to show fectch loading data on App startup.
   const [sortBy, setSortBy] = useState("name");
   const [ascending, setAscending] = useState(true);
   const [genre, setGenre] = useState("All");
@@ -35,7 +36,7 @@ export default function App() {
 
     try {
       const response = await fetch(
-        `https://api.tvmaze.com/search/shows?q=${query}`
+        `https://api.tvmaze.com/search/shows?q=${encodeURIComponent(query)}`
       );
 
       if (!response.ok) {
@@ -70,9 +71,12 @@ export default function App() {
   ].sort();
 
   const languages = [
-    "All",
-    ...new Set(shows.map((item) => item.show.language)),
-  ].sort();
+  "All",
+  ...new Set(
+    shows
+      .map((item) => item.show.language)
+      .filter((language) => language !== null)
+  ),].sort();
 
   const years = [
     { label: "All", min: null, max: null },
@@ -178,6 +182,8 @@ export default function App() {
       {error && <h2>{error}</h2>}
 
       {!loading && !error && <ShowList shows={filteredShows} />}
+
+      <Footer />
 
     </div>
   );

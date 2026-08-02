@@ -1,6 +1,6 @@
 import ShowCard from "./ShowCard";
 
-export default function ShowList({ shows }) {
+function ShowList({ shows }) {
   return (
     <div className="show-grid">
       {shows.map((item) => (
@@ -12,3 +12,5 @@ export default function ShowList({ shows }) {
     </div>
   );
 }
+
+export default ShowList;

@@ -388,6 +388,31 @@ h2 {
 }
 
 /* =========================
+   Footer
+========================= */
+
+footer {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  text-align: center;
+
+  background: var(--surface);
+  color: var(--text-muted);
+
+  border-top: 2px solid var(--surface-2);
+  box-shadow: 0 -4px 12px var(--shadow);
+
+  transition:
+    background .3s ease,
+    color .3s ease;
+}
+
+footer p {
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
    Responsive
 ========================= */
 

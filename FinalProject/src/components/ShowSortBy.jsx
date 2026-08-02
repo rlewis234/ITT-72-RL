@@ -21,13 +21,14 @@ function ShowSortBy({sortBy, setSortBy, ascending, setAscending, genre, setGenre
             className="sort-direction"
             onClick={() => setAscending(!ascending)}
         >
-            {ascending ? "Ascending ↑" : "Decending ↓"}
+            {ascending ? "Ascending ↑" : "Descending ↓"}
         </button>
     </div>
 
     <div className="filter">
-        <label>Genre</label>
+        <label htmlFor="genresel">Genre</label>
         <select
+            id="genresel"
             value={genre}
             onChange={(e) => setGenre(e.target.value)}
         >
@@ -38,8 +39,9 @@ function ShowSortBy({sortBy, setSortBy, ascending, setAscending, genre, setGenre
     </div>
 
     <div className="filter">
-        <label>Language</label>
+        <label htmlFor="langsel">Language</label>
         <select
+            id="langsel"
             value={language}
             onChange={(e) => setLanguage(e.target.value)}
         >
@@ -81,8 +83,9 @@ function ShowSortBy({sortBy, setSortBy, ascending, setAscending, genre, setGenre
 
 
     <div className="filter">
-        <label>Premiered</label>
+        <label htmlFor="yearsel">Premiered</label>
         <select
+            id="yearsel"
             value={premYear}
             onChange={(e) => setYear(e.target.value)}
         >

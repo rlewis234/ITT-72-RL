@@ -3,28 +3,22 @@ import placeholder from "../assets/placeholder.png";
 function ShowCard({ show }) {
   return (
     <div className="card">
-      <img
-        src={
-          show.image
-            ? show.image.medium
-            : placeholder
-        }
-        alt={show.name}
-      />
+      <img src={show.image?.medium || placeholder} alt={show.name} />
 
       <div className="card-body">
         <h2>{show.name}</h2>
 
         <p>
           <strong>Rating:</strong>{" "}
-          {show.rating.average ?? "Not rated"}
+          {show.rating?.average ?? "Not rated"}
         </p>
 
         <p>
           <strong>Genres:</strong>{" "}
-          {show.genres.length > 0
+          {show.genres?.length
             ? show.genres.join(", ")
-            : "No genres listed"}
+            : "No genres listed"
+          }
         </p>
 
         <p>
@@ -44,8 +38,7 @@ function ShowCard({ show }) {
 
         <p>
           <strong>Runtime:</strong>{" "}
-          {show.runtime ?? "Unknown"}{" "}
-          {show.runtime ? "minutes" : ""}
+          {show.runtime ? `${show.runtime} minutes` : "Unknown"}
         </p>
 
         <p>
