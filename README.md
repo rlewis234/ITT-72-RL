@@ -7,7 +7,8 @@ My app allows users to search for TV shows and allows for filtering results.
 API app
 
 ## 3. What features you completed
-* Search
+* Searching
+* Loads a default search of 'Bones' to show loading information on App start
 * Sorting Results by title, Rating, Year Premiered, and Network
 * Filtering results by Genre, Language, Minimum Rating, Status(If show is still running or if it ended), and Year Premiered
 * Genre and Language filter options created dynamically based on search results
